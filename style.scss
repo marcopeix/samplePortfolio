@@ -1,0 +1,218 @@
+/*----------------Variables----------------*/
+
+$gray: #414148;
+$pink: #ea48eb;
+$white: #ffffff;
+
+/*---------------Mixins----------------*/
+
+@mixin bg_img($url, $size, $position){
+  background-image: url($url);
+  background-size: $size;
+  background-position: $position;
+}
+
+/*----------------Global Styles----------------*/
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Abril Fatface', cursive;
+}
+
+.cf:before, .cf:after {
+  content:"";
+  display: table;
+}
+
+.cf:after{
+  clear: both;
+}
+
+/*----------------Banner Styles----------------*/
+
+.wrapper{
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.banner {
+  padding: 5em 0;
+  .logo{
+    float: left;
+  }
+  h1{
+    color: $gray;
+    text-align: right;
+    font-size: 5em;
+    display: inline;
+    float: right;
+    margin: 0;
+  }
+}
+
+.logo {
+  background: $pink;
+  border-radius: 100%;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+  color: $white;
+  font-size: 1.1em;
+  font-family: 'Abril Fatface', cursive;
+}
+
+/*----------------Work Styles----------------*/
+
+.row{
+  width: 100%;
+  margin-bottom: 2em;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+.work{
+  background: $gray;
+  padding: 5em 0;
+  .card{
+    background: $white;
+    border-radius: .35em;
+    height: 450px;
+    display: table;
+    background-repeat: no-repeat;
+  }
+  .card_full{
+    width: 100%;
+  }
+  .card_half{
+    width: 48.5%;
+    float: left;
+  }
+  .card_third{
+    width: 75%;
+    float: left;
+  }
+  .left{
+    margin-right: 1.5%;
+  }
+  .right{
+    margin-left: 1.5%;
+  }
+  .card_1{
+    @include bg_img("images/ui.jpg", 100%, 0px 0px);
+  }
+  .card_2{
+    @include bg_img("images/web-design.jpg", 140%, -110px 0px);
+  }
+  .card_3{
+    @include bg_img("images/color.jpg", 124%, -54px 0px);
+  }
+  .card_4{
+    @include bg_img("images/horse.jpg", 60%, 327px 0px);
+  }
+  .card_inner{
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    padding: 1.5em 12%;
+    color: $white;
+    p{
+      font-size: 1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    h2{
+      font-size: 3em;
+      margin: 0;
+    }
+  }
+  .pink{
+    background: rgba(230, 56, 222, .6);
+    border-radius: .35em;
+  }
+  .green{
+    background: rgba(80, 218, 93, .6);
+    border-radius: .35em;
+  }
+  .purple{
+    background: rgba(145, 89, 219, .6);
+    border-radius: .35em;
+  }
+  .blue{
+    background: rgba(131, 226, 245, .6);
+    border-radius: .35em;
+  }
+  .view_more{
+    width: 25%;
+    float: left;
+    height: 450px;
+    padding-left: 3em;
+    p{
+      font-size: 1.25em;
+      font-weight: 700;
+      line-height: 450px;
+      margin: 0;
+      color: rgb(146, 146, 171);
+    }
+    a{
+      text-decoration: none;
+      &:hover{
+        p{
+          color: $pink;
+        }
+      }
+    }
+  }
+}
+
+/*----------------Footer Styles----------------*/
+
+footer{
+  padding: 3em 0;
+  .logo{
+    float: left;
+    margin: 0;
+  }
+  ul{
+    list-style: none;
+    margin: 0;
+    padding-top: 1em;
+    li{
+      display: inline;
+      float: left;
+      margin-left: 4em;
+      .title{
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: .75em;
+        display: block;
+        padding-bottom: .5em;
+      }
+      .links{
+        font-family: 'Abril Fatface', cursive;
+        font-size: 1.75em;
+        a{
+          color: $gray;
+          text-decoration: none;
+          &:hover{
+            color: $pink;
+          }
+        }
+      }
+    }
+  }
+}
